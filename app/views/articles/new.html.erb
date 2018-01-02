@@ -1,0 +1,19 @@
+<p>Создать статью</p>
+
+<%= form_for :article do |f| %>
+  
+  <div>
+
+  <%= f.label :title %></br>  
+  <%= f.text_field :title %>
+    
+  </div><br>
+ 
+  <div>
+
+  <%= f.label :text %> </br>
+  <%= f.text_area :text %>
+    
+  </div>
+
+<% end %>
