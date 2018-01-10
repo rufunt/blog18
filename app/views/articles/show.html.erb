@@ -1,6 +1,17 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.text %></p>
 
+<h3>Коментарии</h3>
+
+<% @article.comments.each do |comment| %>
+  <p>
+  <i><%= comment.author %> said:</i><br>
+  <%= comment.body %>
+  </p>
+<% end %>
+
+<h3>Добавить коментарии</h3>
+
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
@@ -8,8 +19,7 @@
     <%= f.label :author %></br>  
     <%= f.text_field :author %>
     
-  </p><br>
- 
+  </p> 
   <p>
 
     <%= f.label :body %> </br>
